@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hellow World</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Database Management</title>
+  </head>
+  <body>
+    <!-- I am following BEM convention to write css class name  -->
+    <div id="app">
+      <header class="header">
+        <h1>Employee Database Management</h1>
+        <button class="createEmployee">Add Employee</button>
+      </header>
+
+      <div class="employees">
+        <div class="employees__names">
+          <span class="employees__names--title">Employee List</span>
+          <div class="employees__names--list"></div>
+        </div>
+
+        <div class="employees__single">
+          <span class="employees__single--title"
+            >Employee Information<i class="employee__single--edit" title="Edit">📝</i></span
+          >
+          <div class="employees__single--info"></div>
+        </div>
+      </div>
+
+      <!-- Add employee modal  -->
+      <div class="addEmployee">
+        <form class="addEmployee__create">
+          <p class="addEmployee__create--title">Add a new employee</p>
+          <div>
+            <input
+              type="text"
+              name="firstName"
+              placeholder="First Name"
+              required
+            />
+            <input
+              type="text"
+              name="lastName"
+              placeholder="Last Name"
+              required
+            />
+          </div>
+          <input
+            type="text"
+            name="imageUrl"
+            placeholder="Image URl (Optional)"
+          />
+          <input type="email" name="email" placeholder="Email" required />
+          <input
+            type="number"
+            name="contactNumber"
+            placeholder="Contact"
+            required
+          />
+          <input type="number" name="salary" placeholder="Salary" required />
+          <input type="text" name="address" placeholder="Address" required />
+          <input
+            type="date"
+            name="dob"
+            placeholder="Date of Birth"
+            required
+            class="addEmployee__create--dob"
+          />
+
+          <input
+            type="submit"
+            value="Submit"
+            class="addEmployee__create--submit"
+          />
+        </form>
+      </div>
+    </div>
+
+    <link rel="stylesheet" href="style.css" />
+    <script src="./index.js"></script>
+  </body>
 </html>
